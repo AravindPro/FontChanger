@@ -1,0 +1,33 @@
+{
+	"manifest_version": 3,
+	"name": "Readable",
+	"version": "3",
+
+	"action":{
+		"default_icon": {
+			"45": "logo.png"
+		},
+		"default_title": "Hello",
+		"default_popup": "popup/popup.html"
+	},
+	"permissions":[
+		"activeTab",
+		"scripting"
+	],
+	"background":{
+		"service_worker": "background.js"
+	},
+
+	"content_scripts":[{
+		"matches": ["https://*/*", "http://*/*"],
+		"js":["contentjs/changefont.js"]
+	}
+	// {
+	// 	"matches": ["https://interestingengineering.com/*"],
+	// 	"js":[
+	// 		"contentjs/fontAndWidth.js"
+	// 	]
+	// }
+]
+	
+}
